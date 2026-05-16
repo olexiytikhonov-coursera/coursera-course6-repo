@@ -1,0 +1,1 @@
+Lab1 "Scale and convert images using PIL"
