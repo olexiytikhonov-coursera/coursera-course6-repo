@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-'lab1 resize and convert images t jpeg'
+'lab1 resize and convert images to jpeg'
 
 import os
 from PIL import Image
