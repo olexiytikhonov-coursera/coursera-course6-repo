@@ -19,7 +19,7 @@ def send_reviews(basepath, ip, port):
 
     url = 'http://' + ip + ':' + port + '/feedback/'
     for item in list:
-        resp = requests.post(url=, json=item)
+        resp = requests.post(url, json=item)
         if resp.status_code != 201:
             raise Exception('POST error status={}'.format(resp.status_code))
         print('Created feedback ID: {}'.format(resp.json()["id"]))
