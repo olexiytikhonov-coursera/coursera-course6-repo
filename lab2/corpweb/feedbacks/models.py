@@ -1,10 +1,3 @@
-from django.apps import AppConfig
-
-
-class FeedbackConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'feedback'
-student@410c4c0e479a:/projects/corpweb/feedback$ cat models.py 
 from django.db import models
 
 class Feedback(models.Model):

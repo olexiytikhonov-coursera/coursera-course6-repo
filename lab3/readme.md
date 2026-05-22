@@ -1,0 +1,1 @@
+Automatically generate a PDF and send it by email using Python
