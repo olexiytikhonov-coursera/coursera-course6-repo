@@ -1,0 +1,1 @@
+Automate Updates to catalog information
