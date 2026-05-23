@@ -6,7 +6,7 @@ import os.path
 import smtplib
 
 def generate(sender, recipient, subject, body, attachment_path):
-  """Creates an email with an attachement."""
+  """Creates an email with an attachment."""
   # Basic Email formatting
   message = email.message.EmailMessage()
   message["From"] = sender
@@ -26,6 +26,16 @@ def generate(sender, recipient, subject, body, attachment_path):
                           filename=attachment_filename)
 
   return message
+
+def generate_error_report(sender, recipient, subject, body):
+  """Creates an email without an attachment."""
+  message = email.message.EmailMessage()
+  message["From"] = sender
+  message["To"] = recipient
+  message["Subject"] = subject
+  message.set_content(body)
+  return message
+
 
 def send(message):
   """Sends the message to the configured SMTP server."""
