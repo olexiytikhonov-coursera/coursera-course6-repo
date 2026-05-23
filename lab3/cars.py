@@ -41,6 +41,7 @@ def process_data(data):
 
     if item["total_sales"] > max_sales["total_sales"]:
       max_sales = item
+
     car_year_sales[item["car"]["car_year"]] += item["total_sales"]
 
   max_car_sales_year = (0,0)
@@ -63,7 +64,9 @@ def cars_dict_to_table(car_data):
   """Turns the data in car_data into a list of lists."""
   table_data = [["ID", "Car", "Price", "Total Sales"]]
   # sorted_car_data = sorted(a, key=lambda k: k['total_sales'])
+#  sorted_car_data = sorted(car_data, key=lambda k: k['total_sales'])
   for item in car_data:
+#  for item in sorted_car_data:
     table_data.append([item["id"], format_car(item["car"]), item["price"], item["total_sales"]])
   return table_data
 
@@ -78,15 +81,16 @@ def main(argv):
   table_data = cars_dict_to_table(data)
   # Generate the PDF report
   title = "Sales summary for last month"
-  attachment = "/tmp/cars.pdf"
+#  attachment = "/tmp/cars.pdf"
+  attachment = "cars.pdf"
   reports.generate(attachment, title, paragraph, table_data)
 
   # Send the email
-  sender = "<sender>@example.com"
-  receiver = "<user>@example.com"
+  sender = "automation@example.com"
+  receiver = "student@example.com"
   body = "\n".join(summary)
   message = emails.generate(sender, receiver, title, body, attachment)
-  emails.send(message)
+#  emails.send(message)
 
 
 if __name__ == "__main__":
