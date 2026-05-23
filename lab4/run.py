@@ -18,7 +18,7 @@ def send_descriptions(basepath, ip, port):
             		"image_name": file.rsplit(".", 1)[0] + ".jpeg"
             		})
 
-    url = 'http://' + ip + ':' + port + '/feedback/'
+    url = 'http://' + ip + ':' + port + '/fruits/'
     for item in list:
         resp = requests.post(url, json=item)
 
